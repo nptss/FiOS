@@ -22,7 +22,7 @@ function ngolah_data($kelas,$elemen=array(''=>''),$tabel,$field_kunci){
   function load_data(){
     $.ajax({
       type    : "POST",
-      url     : "'.base_url($kelas).'/view",
+      url     : "'.base_url('privasi/'.$kelas).'/view",
       data    : "",
       success : function(data){
         $(".isine_fios").html(data);
@@ -36,7 +36,7 @@ function ngolah_data($kelas,$elemen=array(''=>''),$tabel,$field_kunci){
       $("#modal_fios").modal();
       $.ajax({
         type    : "POST",
-        url     : "'.base_url($kelas).'/tambah/",
+        url     : "'.base_url('privasi/'.$kelas).'/tambah/",
         data    : "view='.$tabel.'",
         success : function(data){
           $(".isi-modal_fios").html(data);
@@ -51,7 +51,7 @@ function ngolah_data($kelas,$elemen=array(''=>''),$tabel,$field_kunci){
       '.$nama.'
       $.ajax({
         type    : "POST",
-        url     : "'.base_url($kelas).'/simpan?source='.$tabel.'",
+        url     : "'.base_url('privasi/'.$kelas).'/simpan?source='.$tabel.'",
         data    : "'.$data.'",
         success : function(data){
           $("#modal_fios").modal("hide");
@@ -61,12 +61,9 @@ function ngolah_data($kelas,$elemen=array(''=>''),$tabel,$field_kunci){
       });
   }
   function edit(id){
-    if (typeof(Storage) !== "undefined"){
-			   localStorage.setItem("isinya",id);
-	    }
       $.ajax({
         type    : "POST",
-        url     : "'.base_url($kelas).'/edit/?source='.$tabel.'&grip='.$field_kunci.'",
+        url     : "'.base_url('privasi/'.$kelas).'/edit/?source='.$tabel.'&grip='.$field_kunci.'",
         data    : "id="+id,
         success : function(data){
           $("#modal_fios").modal();
@@ -77,16 +74,16 @@ function ngolah_data($kelas,$elemen=array(''=>''),$tabel,$field_kunci){
       });
   }
   function update(){
-      var id = localStorage.getItem("isinya");
+      var id = $("#id").val();
       '.$nama.'
       $.ajax({
         type    : "POST",
-        url     : "'.base_url($kelas).'/update?source='.$tabel.'&grip='.$field_kunci.'",
+        url     : "'.base_url('privasi/'.$kelas).'/update?source='.$tabel.'&grip='.$field_kunci.'",
         data    : "'.$data.'",
         success : function(data){
           $("#modal_fios").modal("hide");
           load_data();
-          localStorage.removeItem("isinya");
+          //localStorage.removeItem("isinya");
           //alert(data);
         }
       });
@@ -96,7 +93,7 @@ function ngolah_data($kelas,$elemen=array(''=>''),$tabel,$field_kunci){
     if (longok == true ){
       $.ajax({
         type    : "POST",
-        url     : "'.base_url($kelas).'/hapus?source='.$tabel.'&grip='.$field_kunci.'",
+        url     : "'.base_url('privasi/'.$kelas).'/hapus?source='.$tabel.'&grip='.$field_kunci.'",
         data    : "id="+id,
         success : function(data){
           $("#modal_tambah").modal("hide");

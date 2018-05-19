@@ -30,7 +30,7 @@ function ambil_gambar($folder,$nama){
 }
 //untuk menghapus gambar
 function hapus_gambar($tabel,$gambar){
-  $target='./gambar/'.$tabel.'/'.$gambar.'.png';
+  $target='./gambar/'.$tabel.'/'.$gambar;
   if (file_exists($target)){unlink($target);  }
   if (file_exists($target)){  return 0;  }
   else{ return 1;}

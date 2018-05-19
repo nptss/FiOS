@@ -1,4 +1,5 @@
 <p class="text-center">
+  <br><br><br>
    <button type="button" class="btn btn-primary" name="button" onclick="tambah()"> Tambah </button>
 </p>
 <div class="isine_fios"></div>
@@ -24,8 +25,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" id="simpan" onclick="simpan()">simpan</button>
-        <button type="button" class="btn btn-success" id="update" onclick="update()">Updae</button>
+        <button type="button" class="btn btn-success" id="simpan" onclick="simpan()">Simpan</button>
+        <button type="button" class="btn btn-success" id="update" onclick="update()">Update</button>
       </div>
     </div>
 

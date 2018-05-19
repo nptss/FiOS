@@ -2,14 +2,14 @@
 function atur_template(){
   $ci=& get_instance();
   $template = array(
-        'table_open'            => '<table  class="table table-striped table-borderd js-exportable">',
+        'table_open'            => '<table  class="table table-borderd js-exportable table-striped ">',
 
         'thead_open'            => '<thead>',
         'thead_close'           => '</thead>',
 
         'heading_row_start'     => '<tr>',
         'heading_row_end'       => '</tr>',
-        'heading_cell_start'    => '<th>',
+        'heading_cell_start'    => '<th class="text-justify">',
         'heading_cell_end'      => '</th>',
 
         'tbody_open'            => '<tbody>',
@@ -45,4 +45,4 @@ function nomor($string){
   return sprintf("%05d", $string);
 }
 
- ?>
+?>

@@ -35,3 +35,8 @@ body{
     margin-top:0px;
     margin-bottom: 0px;
 }
+.isine_fios{
+  background-color: rgba(225, 210, 255, 0.9);
+  color: #000;
+  align-items: center;
+}
